@@ -122,7 +122,7 @@ USE_TZ = True
 
 # STATIC_URL = '/static/'
 # STATICFILES_DIRS=["C:/Users/Asus/Desktop/mango/mango_project/taskmate/taskmate/static"]
-
+STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 CRISPY_TEMPLATE_PACK='bootstrap4'
