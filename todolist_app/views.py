@@ -19,7 +19,8 @@ def todolist(request):#name "todolist is same name given in urls.py of app"
         return redirect('todolist')
 
     else:
-        all_tasks=TaskList.objects.filter(manage=request.user)
+        all_tasks=TaskList.objects.all().order_by('id').filter(manage=request.user)
+        #all_tasks = TaskList.objects.all().order_by('id')
         paginator=Paginator(all_tasks,3)
         page=request.GET.get('pg')#?pg=3
         all_tasks=paginator.get_page(page)
